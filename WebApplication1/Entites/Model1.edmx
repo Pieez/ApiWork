@@ -1,0 +1,475 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Хранилище RegistrModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="_1">
+          <Key>
+            <PropertyRef Name="Bilet" />
+          </Key>
+          <Property Name="Bilet" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
+        <EntityType Name="_2">
+          <Key>
+            <PropertyRef Name="Bilet" />
+          </Key>
+          <Property Name="Bilet" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Prosto" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <!--Ошибки, обнаруженные при создании:
+предупреждение 6013: Первичный ключ в таблице или представлении "Registr.dbo.Airport" не определен, его не удалось вывести. Эта таблица или представление исключены. Чтобы использовать сущность, необходимо проверить схему, добавить правильные ключи и раскомментировать ее.
+        <EntityType Name="Airport">
+          <Property Name="id" Type="nvarchar" MaxLength="50" />
+          <Property Name="Страна" Type="nvarchar" MaxLength="50" />
+          <Property Name="Город" Type="nvarchar" MaxLength="50" />
+          <Property Name="Аэропорт" Type="nvarchar" MaxLength="50" />
+        </EntityType>-->
+        <!--Ошибки, обнаруженные при создании:
+предупреждение 6013: Первичный ключ в таблице или представлении "Registr.dbo.Datess" не определен, его не удалось вывести. Эта таблица или представление исключены. Чтобы использовать сущность, необходимо проверить схему, добавить правильные ключи и раскомментировать ее.
+        <EntityType Name="Datess">
+          <Property Name="id" Type="int" />
+          <Property Name="Day" Type="int" />
+          <Property Name="Month" Type="int" />
+          <Property Name="Year" Type="int" />
+        </EntityType>-->
+        <EntityType Name="Emission">
+          <Key>
+            <PropertyRef Name="ID_Emission" />
+          </Key>
+          <Property Name="ID_Emission" Type="int" Nullable="false" />
+          <Property Name="ID_Source" Type="int" />
+          <Property Name="count" Type="float" />
+          <Property Name="Text" Type="nchar" MaxLength="100" />
+          <Property Name="date" Type="datetime" />
+        </EntityType>
+        <!--Ошибки, обнаруженные при создании:
+предупреждение 6002: В таблице или представлении "Registr.dbo.Imaage" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
+        <EntityType Name="Imaage">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Imaage" Type="image" />
+        </EntityType>
+        <!--Ошибки, обнаруженные при создании:
+предупреждение 6013: Первичный ключ в таблице или представлении "Registr.dbo.Line" не определен, его не удалось вывести. Эта таблица или представление исключены. Чтобы использовать сущность, необходимо проверить схему, добавить правильные ключи и раскомментировать ее.
+        <EntityType Name="Line">
+          <Property Name="id" Type="int" />
+          <Property Name="_from" Type="nvarchar" MaxLength="50" />
+          <Property Name="_to" Type="nvarchar" MaxLength="50" />
+          <Property Name="datass" Type="date" />
+          <Property Name="timess" Type="nvarchar" MaxLength="50" />
+          <Property Name="price_abult" Type="int" />
+          <Property Name="price_kids" Type="int" />
+        </EntityType>-->
+        <!--Ошибки, обнаруженные при создании:
+предупреждение 6013: Первичный ключ в таблице или представлении "Registr.dbo.LineBack" не определен, его не удалось вывести. Эта таблица или представление исключены. Чтобы использовать сущность, необходимо проверить схему, добавить правильные ключи и раскомментировать ее.
+        <EntityType Name="LineBack">
+          <Property Name="id_b" Type="int" />
+          <Property Name="_fromB" Type="nvarchar" MaxLength="50" />
+          <Property Name="_toB" Type="nvarchar" MaxLength="50" />
+          <Property Name="datassB" Type="date" />
+          <Property Name="timessB" Type="time" Precision="7" />
+          <Property Name="price_abultB" Type="int" />
+          <Property Name="price_kidsB" Type="int" />
+        </EntityType>-->
+        <!--Ошибки, обнаруженные при создании:
+предупреждение 6013: Первичный ключ в таблице или представлении "Registr.dbo.nik" не определен, его не удалось вывести. Эта таблица или представление исключены. Чтобы использовать сущность, необходимо проверить схему, добавить правильные ключи и раскомментировать ее.
+        <EntityType Name="nik">
+          <Property Name="a" Type="nvarchar" MaxLength="50" />
+          <Property Name="b" Type="nvarchar" MaxLength="50" />
+        </EntityType>-->
+        <!--Ошибки, обнаруженные при создании:
+предупреждение 6013: Первичный ключ в таблице или представлении "Registr.dbo.Order" не определен, его не удалось вывести. Эта таблица или представление исключены. Чтобы использовать сущность, необходимо проверить схему, добавить правильные ключи и раскомментировать ее.
+        <EntityType Name="Order">
+          <Property Name="login" Type="nvarchar" MaxLength="50" />
+          <Property Name="nomer" Type="int" />
+          <Property Name="Class_bilet" Type="nvarchar" MaxLength="50" />
+          <Property Name="Otkuda" Type="nvarchar" MaxLength="50" />
+          <Property Name="Data1" Type="nchar" MaxLength="10" />
+          <Property Name="Kuda" Type="nvarchar" MaxLength="50" />
+          <Property Name="Data2" Type="nchar" MaxLength="10" />
+          <Property Name="Kolvo_adult" Type="int" />
+          <Property Name="Kolvo_kids" Type="int" />
+          <Property Name="Kolvo_bags" Type="int" />
+        </EntityType>-->
+        <!--Ошибки, обнаруженные при создании:
+предупреждение 6013: Первичный ключ в таблице или представлении "Registr.dbo.order_one_way" не определен, его не удалось вывести. Эта таблица или представление исключены. Чтобы использовать сущность, необходимо проверить схему, добавить правильные ключи и раскомментировать ее.
+        <EntityType Name="order_one_way">
+          <Property Name="login" Type="nvarchar" MaxLength="50" />
+          <Property Name="nomer" Type="int" />
+          <Property Name="Class_bilet" Type="nvarchar" MaxLength="50" />
+          <Property Name="Otkuda" Type="nvarchar" MaxLength="50" />
+          <Property Name="Kuda" Type="nvarchar" MaxLength="50" />
+          <Property Name="Data" Type="date" />
+          <Property Name="Kolvo_adult" Type="int" />
+          <Property Name="Kolvo_kids" Type="int" />
+          <Property Name="Kolvo_bags" Type="int" />
+        </EntityType>-->
+        <!--Ошибки, обнаруженные при создании:
+предупреждение 6002: В таблице или представлении "Registr.dbo.order2" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
+        <EntityType Name="order2">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="numTicket" Type="int" />
+          <Property Name="date" Type="varchar" MaxLength="50" />
+          <Property Name="time" Type="varchar" MaxLength="50" />
+          <Property Name="_from" Type="varchar" MaxLength="50" />
+          <Property Name="_to" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <!--Ошибки, обнаруженные при создании:
+предупреждение 6002: В таблице или представлении "Registr.dbo.Pictures" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
+        <EntityType Name="Pictures">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FileName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Title" Type="nvarchar" MaxLength="50" />
+          <Property Name="ImageData" Type="varbinary(max)" />
+        </EntityType>
+        <!--Ошибки, обнаруженные при создании:
+предупреждение 6013: Первичный ключ в таблице или представлении "Registr.dbo.routes" не определен, его не удалось вывести. Эта таблица или представление исключены. Чтобы использовать сущность, необходимо проверить схему, добавить правильные ключи и раскомментировать ее.
+        <EntityType Name="routes">
+          <Property Name="id" Type="nvarchar" MaxLength="50" />
+          <Property Name="Otkuda" Type="nvarchar" MaxLength="50" />
+          <Property Name="Kuda" Type="nvarchar" MaxLength="50" />
+          <Property Name="Data" Type="date" />
+          <Property Name="Time" Type="nvarchar" MaxLength="50" />
+          <Property Name="Stoimost" Type="int" />
+        </EntityType>-->
+        <EntityType Name="Source">
+          <Key>
+            <PropertyRef Name="ID_Source" />
+          </Key>
+          <Property Name="ID_Source" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nchar" MaxLength="50" />
+          <Property Name="Adress" Type="nchar" MaxLength="100" />
+        </EntityType>
+        <!--Ошибки, обнаруженные при создании:
+предупреждение 6013: Первичный ключ в таблице или представлении "Registr.dbo.Stoim" не определен, его не удалось вывести. Эта таблица или представление исключены. Чтобы использовать сущность, необходимо проверить схему, добавить правильные ключи и раскомментировать ее.
+        <EntityType Name="Stoim">
+          <Property Name="id" Type="int" />
+          <Property Name="price_adult" Type="int" />
+          <Property Name="price_childs" Type="int" />
+        </EntityType>-->
+        <!--Ошибки, обнаруженные при создании:
+предупреждение 6002: В таблице или представлении "Registr.dbo.Stud" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
+        <EntityType Name="Stud">
+          <Key>
+            <PropertyRef Name="login" />
+            <PropertyRef Name="password" />
+          </Key>
+          <Property Name="login" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="password" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <!--Ошибки, обнаруженные при создании:
+предупреждение 6013: Первичный ключ в таблице или представлении "Registr.dbo.Type_bil" не определен, его не удалось вывести. Эта таблица или представление исключены. Чтобы использовать сущность, необходимо проверить схему, добавить правильные ключи и раскомментировать ее.
+        <EntityType Name="Type_bil">
+          <Property Name="id_bil" Type="int" />
+          <Property Name="TypeB" Type="nvarchar" MaxLength="50" />
+          <Property Name="Stoimost" Type="int" />
+        </EntityType>-->
+        <!--Ошибки, обнаруженные при создании:
+предупреждение 6013: Первичный ключ в таблице или представлении "Registr.dbo.Type_class" не определен, его не удалось вывести. Эта таблица или представление исключены. Чтобы использовать сущность, необходимо проверить схему, добавить правильные ключи и раскомментировать ее.
+        <EntityType Name="Type_class">
+          <Property Name="Type_class" Type="nvarchar" MaxLength="50" />
+          <Property Name="id" Type="int" />
+        </EntityType>-->
+        <!--Ошибки, обнаруженные при создании:
+предупреждение 6013: Первичный ключ в таблице или представлении "Registr.dbo.UAdmin" не определен, его не удалось вывести. Эта таблица или представление исключены. Чтобы использовать сущность, необходимо проверить схему, добавить правильные ключи и раскомментировать ее.
+        <EntityType Name="UAdmin">
+          <Property Name="N" Type="nvarchar" MaxLength="50" />
+          <Property Name="P" Type="nvarchar" MaxLength="50" />
+        </EntityType>-->
+        <Association Name="FK_Emission_Source">
+          <End Role="Source" Type="Self.Source" Multiplicity="0..1" />
+          <End Role="Emission" Type="Self.Emission" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Source">
+              <PropertyRef Name="ID_Source" />
+            </Principal>
+            <Dependent Role="Emission">
+              <PropertyRef Name="ID_Source" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Хранилище RegistrModelContainer">
+          <EntitySet Name="_1" EntityType="Self._1" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="_2" EntityType="Self._2" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Emission" EntityType="Self.Emission" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Source" EntityType="Self.Source" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Imaage" EntityType="Self.Imaage" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Imaage].[id] AS [id], 
+    [Imaage].[Imaage] AS [Imaage]
+    FROM [dbo].[Imaage] AS [Imaage]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="order2" EntityType="Self.order2" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [order2].[id] AS [id], 
+    [order2].[numTicket] AS [numTicket], 
+    [order2].[date] AS [date], 
+    [order2].[time] AS [time], 
+    [order2].[_from] AS [_from], 
+    [order2].[_to] AS [_to]
+    FROM [dbo].[order2] AS [order2]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Pictures" EntityType="Self.Pictures" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Pictures].[Id] AS [Id], 
+    [Pictures].[FileName] AS [FileName], 
+    [Pictures].[Title] AS [Title], 
+    [Pictures].[ImageData] AS [ImageData]
+    FROM [dbo].[Pictures] AS [Pictures]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Stud" EntityType="Self.Stud" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Stud].[login] AS [login], 
+    [Stud].[password] AS [password]
+    FROM [dbo].[Stud] AS [Stud]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK_Emission_Source" Association="Self.FK_Emission_Source">
+            <End Role="Source" EntitySet="Source" />
+            <End Role="Emission" EntitySet="Emission" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="RegistrModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="C_1">
+          <Key>
+            <PropertyRef Name="Bilet" />
+          </Key>
+          <Property Name="Bilet" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityType Name="C_2">
+          <Key>
+            <PropertyRef Name="Bilet" />
+          </Key>
+          <Property Name="Bilet" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Prosto" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Emission">
+          <Key>
+            <PropertyRef Name="ID_Emission" />
+          </Key>
+          <Property Name="ID_Emission" Type="Int32" Nullable="false" />
+          <Property Name="ID_Source" Type="Int32" />
+          <Property Name="count" Type="Double" />
+          <Property Name="Text" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+          <Property Name="date" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Source" Relationship="Self.FK_Emission_Source" FromRole="Emission" ToRole="Source" />
+        </EntityType>
+        <EntityType Name="Source">
+          <Key>
+            <PropertyRef Name="ID_Source" />
+          </Key>
+          <Property Name="ID_Source" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+          <Property Name="Adress" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="Emission" Relationship="Self.FK_Emission_Source" FromRole="Source" ToRole="Emission" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Imaage">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Imaage1" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="order2">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="numTicket" Type="Int32" />
+          <Property Name="date" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="time" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="C_from" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="C_to" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Pictures">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FileName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ImageData" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Stud">
+          <Key>
+            <PropertyRef Name="login" />
+            <PropertyRef Name="password" />
+          </Key>
+          <Property Name="login" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Emission_Source">
+          <End Role="Source" Type="Self.Source" Multiplicity="0..1" />
+          <End Role="Emission" Type="Self.Emission" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Source">
+              <PropertyRef Name="ID_Source" />
+            </Principal>
+            <Dependent Role="Emission">
+              <PropertyRef Name="ID_Source" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="RegistrEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="C_1" EntityType="Self.C_1" />
+          <EntitySet Name="C_2" EntityType="Self.C_2" />
+          <EntitySet Name="Emission" EntityType="Self.Emission" />
+          <EntitySet Name="Source" EntityType="Self.Source" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+          <EntitySet Name="Imaage" EntityType="Self.Imaage" />
+          <EntitySet Name="order2" EntityType="Self.order2" />
+          <EntitySet Name="Pictures" EntityType="Self.Pictures" />
+          <EntitySet Name="Stud" EntityType="Self.Stud" />
+          <AssociationSet Name="FK_Emission_Source" Association="Self.FK_Emission_Source">
+            <End Role="Source" EntitySet="Source" />
+            <End Role="Emission" EntitySet="Emission" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Хранилище RegistrModelContainer" CdmEntityContainer="RegistrEntities">
+          <EntitySetMapping Name="C_1">
+            <EntityTypeMapping TypeName="RegistrModel.C_1">
+              <MappingFragment StoreEntitySet="_1">
+                <ScalarProperty Name="Bilet" ColumnName="Bilet" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="C_2">
+            <EntityTypeMapping TypeName="RegistrModel.C_2">
+              <MappingFragment StoreEntitySet="_2">
+                <ScalarProperty Name="Bilet" ColumnName="Bilet" />
+                <ScalarProperty Name="Prosto" ColumnName="Prosto" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Emission">
+            <EntityTypeMapping TypeName="RegistrModel.Emission">
+              <MappingFragment StoreEntitySet="Emission">
+                <ScalarProperty Name="ID_Emission" ColumnName="ID_Emission" />
+                <ScalarProperty Name="ID_Source" ColumnName="ID_Source" />
+                <ScalarProperty Name="count" ColumnName="count" />
+                <ScalarProperty Name="Text" ColumnName="Text" />
+                <ScalarProperty Name="date" ColumnName="date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Source">
+            <EntityTypeMapping TypeName="RegistrModel.Source">
+              <MappingFragment StoreEntitySet="Source">
+                <ScalarProperty Name="ID_Source" ColumnName="ID_Source" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Adress" ColumnName="Adress" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="RegistrModel.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Imaage">
+            <EntityTypeMapping TypeName="RegistrModel.Imaage">
+              <MappingFragment StoreEntitySet="Imaage">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Imaage1" ColumnName="Imaage" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="order2">
+            <EntityTypeMapping TypeName="RegistrModel.order2">
+              <MappingFragment StoreEntitySet="order2">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="numTicket" ColumnName="numTicket" />
+                <ScalarProperty Name="date" ColumnName="date" />
+                <ScalarProperty Name="time" ColumnName="time" />
+                <ScalarProperty Name="C_from" ColumnName="_from" />
+                <ScalarProperty Name="C_to" ColumnName="_to" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Pictures">
+            <EntityTypeMapping TypeName="RegistrModel.Pictures">
+              <MappingFragment StoreEntitySet="Pictures">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="FileName" ColumnName="FileName" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="ImageData" ColumnName="ImageData" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Stud">
+            <EntityTypeMapping TypeName="RegistrModel.Stud">
+              <MappingFragment StoreEntitySet="Stud">
+                <ScalarProperty Name="login" ColumnName="login" />
+                <ScalarProperty Name="password" ColumnName="password" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
